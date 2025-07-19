@@ -19,3 +19,4 @@ Please credit Owen Chappell if you use or adapt this prank.
 ---
 
 *Note:* This prank is purely visual and does not harm your computer or data.
+*Note:* In order for this "virus" to fully work you must have (POPUPS) Allowed in your browser- if you dont it will ask to turn on, after you do you must re open the file
