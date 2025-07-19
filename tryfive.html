@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚠️ Chaos Mode Activated ⚠️</title>
+  <style>
+    @keyframes flash {
+      0% { background-color: red; color: yellow; }
+      25% { background-color: blue; color: white; }
+      50% { background-color: lime; color: black; }
+      75% { background-color: purple; color: cyan; }
+      100% { background-color: orange; color: pink; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.5); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      animation: flash 0.5s infinite;
+      font-family: Comic Sans MS, cursive, fantasy;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: spin 2s linear infinite;
+      margin-top: 20vh;
+    }
+
+    p {
+      font-size: 2em;
+      animation: bounce 0.5s infinite ease-in-out, wiggle 0.2s infinite alternate;
+    }
+
+    a {
+      font-size: 1.5em;
+      color: white;
+      text-decoration: underline;
+      animation: flash 1s infinite;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px;
+    }
+
+    marquee {
+      font-size: 1.5em;
+      font-weight: bold;
+      animation: flash 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💥 CHAOS MODE 💥</h1>
+    <p>This page is totally out of control!</p>
+    <p>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+        Click here for a surprise!
+      </a>
+    </p>
+    <marquee behavior="scroll" direction="left">🚨 WARNING: Eyes May Melt 🚨</marquee>
+    <marquee behavior="scroll" direction="right">🎉 PARTY MODE ENABLED 🎉</marquee>
+  </div>
+
+  <script>
+    window.onload = function() {
+      window.open('https://www.youtube.com/watch?v=FgxoZ1qi4JM', '_blank');
+    };
+  </script>
+</body>
+</html>
