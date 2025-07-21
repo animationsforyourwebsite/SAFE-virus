@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Open Rickroll 50 Times</title>
+  <style>
+    body {
+      text-align: center; 
+      padding-top: 50px; 
+      font-family: sans-serif;
+    }
+    /* Removed progress styling since no progress displayed */
+  </style>
+  <script>
+    let tabsOpened = 0;
+    const totalTabs = 50;
+
+    function openRainbowTab() {
+      const rainbowHTML = `
+        <html>
+          <head>
+            <title>RICKROLL</title>
+            <style>
+              @keyframes rainbow {
+                0% {background-color: red;}
+                14% {background-color: orange;}
+                28% {background-color: yellow;}
+                42% {background-color: green;}
+                56% {background-color: blue;}
+                70% {background-color: indigo;}
+                84% {background-color: violet;}
+                100% {background-color: red;}
+              }
+              body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: rainbow 2s infinite;
+                color: black;
+                font-size: 48px;
+                font-weight: bold;
+                user-select: none;
+                flex-direction: column;
+                font-family: sans-serif;
+              }
+              #countdown {
+                margin-top: 20px;
+                font-size: 32px;
+              }
+            </style>
+          </head>
+          <body>
+            RICKROLL
+            <div id="countdown">10</div>
+            <script>
+              let seconds = 10;
+              const countdownElem = document.getElementById('countdown');
+              const interval = setInterval(() => {
+                seconds--;
+                countdownElem.textContent = seconds;
+                if (seconds <= 0) {
+                  clearInterval(interval);
+                  window.open('http://aaronhoyt.com/gfy.asp', '_blank');
+                }
+              }, 1000);
+            <\/script>
+          </body>
+        </html>`;
+
+      const rainbowWindow = window.open("", "_blank", "width=600,height=400");
+      if (rainbowWindow) {
+        rainbowWindow.document.write(rainbowHTML);
+        rainbowWindow.document.close();
+      } else {
+        alert("Popup blocked! Please allow popups for this site.");
+      }
+    }
+
+    function openFiftyTabs() {
+      tabsOpened = 0;
+      for (let i = 0; i < totalTabs; i++) {
+        setTimeout(() => {
+          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+          tabsOpened++;
+          if (tabsOpened === totalTabs) {
+            setTimeout(() => {
+              openRainbowTab();
+            }, 500);
+          }
+        }, i * 100);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Click the button. You know you want to.</h1>
+  <button onclick="openFiftyTabs()" style="padding: 10px 20px; font-size: 16px;">
+    Do it.
+  </button>
+</body>
+</html>
